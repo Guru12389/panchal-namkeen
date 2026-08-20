@@ -41,13 +41,15 @@
 
  .hero {
     position: relative;
-  height: 90vh;
+  height: 54vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   background: url("https://via.placeholder.com/1600x900") no-repeat center/cover;
+  overflow: hidden;
+   position: relative;
   overflow: hidden;
 }
 .hero-overlay {
@@ -57,11 +59,18 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(
-    rgba(233, 0, 0, 0.6),
+    rgb(255, 116, 2),
     rgba(251, 255, 7, 0.6)
   );
   z-index: 1;
 }
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+.delay-1 { animation-delay: .3s; }
+.delay-2 { animation-delay: .6s; }
 .hero-content {
   position: relative;
   z-index: 2;

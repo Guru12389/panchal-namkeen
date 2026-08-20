@@ -39,8 +39,8 @@ function Navbar() {
       <div className="navbar-container">
         {/* LEFT: LOGO */}
         <div className="navbar-logo" onClick={() => navigate("/")}>
-          <img src={logo} alt="Panchal Namkeen Logo" />
-          <span className="brand-name">Panchal Namkeen</span>
+          <img src={logo} alt="Panchalveda Namkeen Logo" />
+          <span className="brand-name">Panchalveda Namkeen</span>
         </div>
 
         {/* CENTER: NAV LINKS */}

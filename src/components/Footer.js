@@ -27,7 +27,7 @@ function Footer() {
       <div className="footer-container">
         {/* About */}
         <div className="footer-section">
-          <h3>Panchal Namkeen</h3>
+          <h3>Panchalveda Namkeen</h3>
           <p>
             Taste of Bharat in Every Bite - Aprakashi Foods.  
             Delivering authentic namkeen made with love and tradition.
@@ -65,7 +65,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 Panchal Namkeen. All Rights Reserved.</p>
+        <p>© 2026 Panchalveda Namkeen. All Rights Reserved.</p>
       </div>
     </footer>
   );

@@ -53,7 +53,7 @@
 //     <div className="contact-wrapper fade-in">
 //       <header className="header shine-animation">
 //         <img src={logo} alt="Logo" className="logo" />
-//         <h1 className="brand-shine">Panchal Namkeens</h1>
+//         <h1 className="brand-shine">Panchalveda Namkeens</h1>
 //       </header>
 
 //       <h2>Contact Us</h2>
@@ -93,7 +93,7 @@
 
 //         <div className="map-section slide-in">
 //           <iframe
-//             title="Panchal Namkeen Location"
+//             title="Panchalveda Namkeen Location"
 //             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14184.482826732177!2d79.61328018561495!3d27.278093644465873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e3b95b802c091%3A0xcc2551e075e7a907!2sShekhpur%20Rustampur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1753548490950!5m2!1sen!2sin"
 //             width="100%"
 //             height="300"
@@ -170,7 +170,7 @@
 //     <div className="contact-wrapper fade-in">
 //       <header className="contact-header">
 //         <img src={logo} alt="Logo" className="contact-logo" />
-//         <h1 className="contact-title">Panchal Namkeens</h1>
+//         <h1 className="contact-title">Panchalveda Namkeens</h1>
 //         <p className="contact-subtitle">
 //           Taste of Bharat in Every Bite – Aprakashi Foods
 //         </p>
@@ -218,7 +218,7 @@
 //         <div className="map-container slide-in">
 //           <h2>Our Location</h2>
 //           <iframe
-//             title="Panchal Namkeen Location"
+//             title="Panchalveda Namkeen Location"
 //             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14184.482826732177!2d79.61328018561495!3d27.278093644465873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e3b95b802c091%3A0xcc2551e075e7a907!2sShekhpur%20Rustampur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1753548490950!5m2!1sen!2sin"
 //             width="100%"
 //             height="300"
@@ -291,7 +291,7 @@ function Contact() {
     <div className="contact-wrapper fade-in">
       <header className="contact-header">
         <img src={logo} alt="Logo" className="contact-logo" />
-        <h1 className="contact-title">Panchal Namkeens</h1>
+        <h1 className="contact-title">Panchalveda Namkeens</h1>
         <p className="contact-subtitle">
           Taste of Bharat in Every Bite – Aprakashi Foods
         </p>
@@ -353,7 +353,7 @@ function Contact() {
   <div className="contact-info">
     <h4 style={{ marginTop: '1.5rem' }}>Reach Us At:</h4>
     <p>📞 +91 95609 32132</p>
-    <p>🏪 Aprakashi Foods, Farrukhabad, Uttar Pradesh</p>
+    <p>🏪 Panchalveda Agro Foods, Farrukhabad, Uttar Pradesh</p>
     <p>🕒 Opening Hours: 9:00 AM – 9:00 PM (Mon–Sat)</p>
   </div>
 </div>
@@ -363,7 +363,7 @@ function Contact() {
         <div className="map-container slide-in">
           <h2>Our Location</h2>
           <iframe
-            title="Panchal Namkeen Location"
+            title="Panchalveda Namkeen Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14184.482826732177!2d79.61328018561495!3d27.278093644465873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e3b95b802c091%3A0xcc2551e075e7a907!2sShekhpur%20Rustampur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1753548490950!5m2!1sen!2sin"
             width="100%"
             height="300"

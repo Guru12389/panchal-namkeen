@@ -37,10 +37,10 @@ export default function Home() {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="brand-title">Panchal Namkeen</h1>
-          <p className="brand-slogan">
+          <h1 className="fade-up delay-1">Panchalveda Namkeen</h1>
+          <p className="fade-up delay-2 brand-slogan">
             "Taste of Bharat in Every Bite - Aprakashi Foods"
-          </p>
+          </p><div className="fade-up delay-2 brand-slogan">
           <div className="hero-buttons">
             <button
               className="btn-primary"
@@ -51,18 +51,18 @@ export default function Home() {
             <button className="btn-outline" onClick={() => navigate("/contact")}>
               Contact Us
             </button>
-          </div>
+          </div></div>
         </div>
       </section>
 
       {/* ABOUT SECTION */}
       <section className="about">
         <div className="about-content">
-          <img src={Aboutpic} alt="About Panchal Namkeen" className="about-img" />
+          <img src={Aboutpic} alt="About Panchalveda Namkeen" className="about-img" />
           <div className="about-text">
             <h2>About Us</h2>
             <p>
-              Panchal Namkeen brings you the authentic flavors of India, crafted
+              Panchalveda Namkeen brings you the authentic flavors of India, crafted
               with premium ingredients and traditional recipes. Our mission is
               to deliver delicious snacks that connect people with the taste of
               Bharat.
@@ -176,7 +176,7 @@ export default function Home() {
         <h2>Find Us</h2>
         <div className="map-contact-grid">
           <iframe
-            title="Panchal Namkeen Location"
+            title="Panchalveda Namkeen Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14184.482826732177!2d79.61328018561495!3d27.278093644465873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e3b95b802c091%3A0xcc2551e075e7a907!2sShekhpur%20Rustampur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1753548490950!5m2!1sen!2sin"
             width="100%"
             height="350"
@@ -185,7 +185,7 @@ export default function Home() {
             loading="lazy"
           ></iframe>
           <div className="contact-details">
-            <h3>Panchal Namkeen</h3>
+            <h3>Panchalveda Namkeen</h3>
             <p>Taste of Bharat in Every Bite - Aprakashi Foods</p>
             <p>📍 Farrukhabad, Uttar Pradesh, India</p>
             <p>📞 +91-9560932132</p>

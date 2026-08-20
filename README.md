@@ -1,6 +1,6 @@
 # panchal-namkeen
 
-Panchal Namkeen official website
+Panchalveda Namkeen official website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -46,6 +46,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
-# Panchal Namkeen Website Info
+# Panchalveda Namkeen Website Info
 
-This README describes the **official Panchal Namkeen website project**, built with React, ready to deploy.
+This README describes the **official Panchalveda Namkeen website project**, built with React, ready to deploy.
