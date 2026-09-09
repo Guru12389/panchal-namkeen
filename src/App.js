@@ -104,7 +104,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import AllProducts from "./pages/AllProducts";
+// import AllProducts from "./pages/AllProducts";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 
@@ -119,7 +119,7 @@ function App() {
             <Route path="/product" element={<Product />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/all-products" element={<AllProducts />} />
+            {/* <Route path="/all-products" element={<AllProducts />} /> */}
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
