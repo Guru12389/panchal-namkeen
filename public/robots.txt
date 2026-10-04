@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
+# PanchalVeda - robots.txt
+# Allows all search engines to crawl and index the site
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Block the cart page from being indexed (not useful for SEO)
+Disallow: /cart
+
+# Sitemap location
+Sitemap: https://panchalveda.com/sitemap.xml

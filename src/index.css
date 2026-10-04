@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Global fix for fixed navbar */
+body {
+  padding-top: 72px; /* Same as navbar min-height */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 58px;
+  }
+}

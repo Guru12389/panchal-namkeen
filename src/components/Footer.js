@@ -1,7 +1,8 @@
 // src/components/Footer.js
 import React from "react";
 import "./Footer.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import logo from '../pages/assets/LOGO.png';
 
 function Footer() {
   return (
@@ -9,7 +10,9 @@ function Footer() {
       <div className="footer-container">
         {/* About */}
         <div className="footer-section">
-          <h3>Panchalveda Namkeen</h3>
+          <h3> Panchalveda </h3>
+
+          <img src={logo} alt="Panchalveda Namkeens Logo" className="hero-logo" />
           <p>
             Taste of Bharat in Every Bite - PanchalVeda AgroFoods.  
             Delivering authentic namkeen made with love and tradition.
@@ -21,8 +24,9 @@ function Footer() {
           <h4>Quick Links</h4>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
             <li><a href="/product">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/heritage">Heritage</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -30,9 +34,9 @@ function Footer() {
         {/* Contact Info */}
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Email: panchalvedaagrofoods@gmail.com</p>
-          <p>Phone: +91 8174900977</p>
-          <p>Location: Farrukhabad, Uttar Pradesh</p>
+          <p>Email: contact@panchalveda.com</p> 
+          <p>Phone: +91 8174900977</p> 
+          <p>Location: Kamalganj,Farrukhabad, Uttar Pradesh</p>
         </div>
 
         {/* Socials */}
@@ -46,7 +50,7 @@ function Footer() {
               aria-label="Facebook"
             >
               <FaFacebookF />
-            </a>
+            </a><br/>
             <a 
               href="https://www.instagram.com/panchalvedaagrofoods?igsi=amdsOHhlenpkNXlz" 
               target="_blank" 
@@ -54,7 +58,7 @@ function Footer() {
               aria-label="Instagram"
             >
               <FaInstagram />
-            </a>
+            </a><br/>
             <a 
               href="https://x.com/PanchalVeda" 
               target="_blank" 
@@ -62,7 +66,7 @@ function Footer() {
               aria-label="X (Twitter)"
             >
               <FaTwitter />
-            </a>
+            </a><br/>
             <a 
               href="https://www.linkedin.com/in/panchal-veda-9087a442b" 
               target="_blank" 
@@ -70,13 +74,21 @@ function Footer() {
               aria-label="LinkedIn"
             >
               <FaLinkedinIn />
+            </a><br/>
+            <a 
+              href="https://wa.me/918174900977" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
             </a>
           </div>
           <p className="social-tagline">Connect with us on social media</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 Panchalveda Namkeen. All Rights Reserved.</p>
+        <p>© 2026 Panchalveda Agrofoods. All Rights Reserved.</p>
       </div>
     </footer>
   );

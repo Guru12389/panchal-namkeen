@@ -51,3 +51,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.main-content {
+  /* Push content down below the fixed navbar */
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 65px;
+  }
+}

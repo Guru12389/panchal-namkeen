@@ -126,4 +126,36 @@
   .social-icons {
     justify-content: center;
   }
+}.footer-section br {
+  display: block;
+  content: "";
+  margin-bottom: 50px;   /* adjust as needed */
+}
+.footer-section p {
+  margin: 0 0 12px 0;   /* 12px gap below each paragraph */
+  line-height: 1.5;
+}.hero-logo {
+  width: 150px;      /* was 200px → 25% smaller */
+  height: auto;      /* keeps aspect ratio */
+}
+/* Individual Social Hover Colors */
+.social-icons a:hover .fa-facebook-f {
+  color: #1877f2;
+}
+
+.social-icons a:hover .fa-instagram {
+  color: #e4405f;
+}
+
+.social-icons a:hover .fa-twitter {
+  color: #1da1f2;
+}
+
+.social-icons a:hover .fa-linkedin-in {
+  color: #0a66c2;
+}
+
+/* Add this new rule for WhatsApp */
+.social-icons a:hover .fa-whatsapp {
+  color: #25d366;
 }
