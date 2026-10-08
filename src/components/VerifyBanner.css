@@ -1,0 +1,47 @@
+.verify-banner {
+  background: #fff7e1;
+  border-bottom: 1px solid #f0d99a;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #7a5600;
+  font-size: 14px;
+}
+.vb-icon {
+  font-size: 22px;
+}
+.vb-text {
+  flex: 1;
+}
+.vb-text b {
+  display: block;
+  margin-bottom: 2px;
+}
+.vb-text p {
+  margin: 0;
+  font-size: 13px;
+}
+.vb-msg {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #5a4000;
+  font-style: italic;
+}
+.vb-btn {
+  background: #7a5600;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.vb-btn:hover:not(:disabled) {
+  background: #5f4300;
+}
+.vb-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

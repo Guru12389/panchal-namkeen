@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useLocation, Link } from "react-router-dom";
 import "./Navbar.css";
+
+import { useAuth } from "../context/AuthContext";
+
 import logo from "../pages/assets/LOGO.png";
-import { 
-  FaBars, 
-  FaTimes, 
-  FaShoppingCart, 
-  FaHome, 
-  FaInfoCircle, 
-  FaBox, 
-  FaEnvelope, 
+import {
+  FaBars,
+  FaTimes,
+  FaShoppingCart,
+  FaHome,
+  FaInfoCircle,
+  FaBox,
+  FaEnvelope,
   FaLandmark,
   FaPhoneAlt,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaUserCircle,
+  FaSignOutAlt,
+  FaClipboardList,
+  FaShieldAlt,
+  FaSignInAlt,
+  FaUserPlus,
 } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 
@@ -20,21 +29,23 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const { cart = [] } = useCart();
+  const { user, logout } = useAuth();
 
   const cartCount = cart.reduce(
     (sum, item) => sum + (item.quantity || item.qty || 1),
     0
   );
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
+    setUserMenuOpen(false);
   }, [location]);
 
-  // Scroll behavior - shrink + auto-hide on scroll down
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -42,7 +53,6 @@ function Navbar() {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 30);
 
-      // Auto-hide on scroll down (past 300px), show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 300) {
         setHidden(true);
       } else {
@@ -56,24 +66,35 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  // Close user dropdown on outside click
+  useEffect(() => {
+    function onClick(e) {
+      if (!e.target.closest(".nav-user")) setUserMenuOpen(false);
+    }
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
+  function handleLogout() {
+    logout();
+    setUserMenuOpen(false);
+    navigate("/");
+  }
 
   const navLinks = [
     { to: "/", label: "Home", icon: <FaHome /> },
     { to: "/product", label: "Products", icon: <FaBox /> },
     { to: "/about", label: "About", icon: <FaInfoCircle /> },
     { to: "/heritage", label: "Heritage", icon: <FaLandmark /> },
-      { to: "/events", label: "Events", icon: <FaCalendarAlt /> },
+    { to: "/events", label: "Events", icon: <FaCalendarAlt /> },
     { to: "/contact", label: "Contact", icon: <FaEnvelope /> },
   ];
 
@@ -84,7 +105,6 @@ function Navbar() {
           scrolled ? "navbar-scrolled" : ""
         } ${hidden && !isOpen ? "navbar-hidden" : ""}`}
       >
-        {/* Top Accent Bar */}
         <div className="navbar-accent"></div>
 
         <div className="navbar-container">
@@ -99,7 +119,9 @@ function Navbar() {
               <span className="brand-name">
                 Panchal<span className="brand-highlight">Veda</span>
               </span>
-              <span className="brand-sub">A Crunch of Tradition, A Dash of Heengn</span>
+              <span className="brand-sub">
+                A Crunch of Tradition, A Dash of Heengn
+              </span>
             </div>
           </div>
 
@@ -132,6 +154,49 @@ function Navbar() {
               </li>
             ))}
 
+            {/* Mobile-only: auth links inside drawer */}
+            <li className="mobile-auth-links">
+              {user ? (
+                <>
+                  <Link to="/my-orders" className="nav-link">
+                    <span className="nav-icon">
+                      <FaClipboardList />
+                    </span>
+                    <span className="nav-label">My Orders</span>
+                  </Link>
+                  {user.role === "admin" && (
+                    <Link to="/admin" className="nav-link">
+                      <span className="nav-icon">
+                        <FaShieldAlt />
+                      </span>
+                      <span className="nav-label">Admin Panel</span>
+                    </Link>
+                  )}
+                  <button className="nav-link nav-logout-btn" onClick={handleLogout}>
+                    <span className="nav-icon">
+                      <FaSignOutAlt />
+                    </span>
+                    <span className="nav-label">Logout</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login" className="nav-link">
+                    <span className="nav-icon">
+                      <FaSignInAlt />
+                    </span>
+                    <span className="nav-label">Login</span>
+                  </Link>
+                  <Link to="/register" className="nav-link">
+                    <span className="nav-icon">
+                      <FaUserPlus />
+                    </span>
+                    <span className="nav-label">Register</span>
+                  </Link>
+                </>
+              )}
+            </li>
+
             <li className="mobile-drawer-footer">
               <div className="drawer-contact">
                 <span className="drawer-contact-label">📞 Reach Us</span>
@@ -142,10 +207,55 @@ function Navbar() {
 
           {/* RIGHT: ACTIONS */}
           <div className="navbar-right">
-            <button
-              className="nav-cta"
-              onClick={() => navigate("/product")}
-            >
+            {/* USER MENU (desktop) */}
+            <div className="nav-user">
+              {user ? (
+                <>
+                  <button
+                    className="nav-user-btn"
+                    onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  >
+                    <FaUserCircle />
+                    <span className="nav-user-name">
+                      {user.name?.split(" ")[0]}
+                    </span>
+                  </button>
+                  {userMenuOpen && (
+                    <div className="nav-user-menu">
+                      <div className="nav-user-header">
+                        <b>{user.name}</b>
+                        <span>{user.email}</span>
+                      </div>
+                      <Link to="/my-orders" className="nav-user-item">
+                        <FaClipboardList /> My Orders
+                      </Link>
+                      {user.role === "admin" && (
+                        <Link to="/admin" className="nav-user-item">
+                          <FaShieldAlt /> Admin Panel
+                        </Link>
+                      )}
+                      <button
+                        className="nav-user-item nav-user-logout"
+                        onClick={handleLogout}
+                      >
+                        <FaSignOutAlt /> Logout
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="nav-auth-buttons">
+                  <Link to="/login" className="nav-auth-login">
+                    Login
+                  </Link>
+                  <Link to="/register" className="nav-auth-register">
+                    Register
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <button className="nav-cta" onClick={() => navigate("/product")}>
               <span>Order Now</span>
             </button>
 
@@ -163,7 +273,6 @@ function Navbar() {
               )}
             </div>
 
-            {/* MOBILE MENU ICON */}
             <div
               className={`menu-icon ${isOpen ? "open" : ""}`}
               onClick={() => setIsOpen(!isOpen)}
@@ -177,7 +286,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Overlay */}
       <div
         className={`mobile-overlay ${isOpen ? "active" : ""}`}
         onClick={() => setIsOpen(false)}

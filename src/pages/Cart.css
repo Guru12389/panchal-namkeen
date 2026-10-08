@@ -625,3 +625,23 @@
     font-size: 0.6rem;
   }
 }
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkout-btn.primary {
+  background: #b8671c;
+  color: #fff;
+}
+.checkout-btn.primary:hover {
+  background: #9a5315;
+}
+.checkout-btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+.checkout-btn.whatsapp:hover {
+  background: #1eb858;
+}
