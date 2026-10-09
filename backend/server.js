@@ -23,6 +23,7 @@ app.use(
       "http://localhost:3003",
       "https://panchalveda.com",
       "https://www.panchalveda.com",
+      "https://www.panchalveda.in",
       "https://panchal-namkeen-api.onrender.com",
     ],
     credentials: true,
